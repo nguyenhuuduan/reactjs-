@@ -1,0 +1,162 @@
+{
+    "info": {
+      "name": "Dating App API Collection",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Register User",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "formdata",
+            "formdata": [
+              {
+                "key": "email",
+                "value": "example@gmail.com",
+                "type": "text"
+              },
+              {
+                "key": "password",
+                "value": "example123",
+                "type": "text"
+              },
+              {
+                "key": "name",
+                "value": "John Doe",
+                "type": "text"
+              }
+            ]
+          },
+          "url": {
+            "raw": "http://localhost:8080/register",
+            "host": ["http://localhost:8080"],
+            "path": ["register"]
+          }
+        }
+      },
+      {
+        "name": "Forgot Password",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "formdata",
+            "formdata": [
+              {
+                "key": "email",
+                "value": "example@gmail.com",
+                "type": "text"
+              }
+            ]
+          },
+          "url": {
+            "raw": "http://localhost:8080/forgot-password",
+            "host": ["http://localhost:8080"],
+            "path": ["forgot-password"]
+          }
+        }
+      },
+      {
+        "name": "Verify OTP",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "formdata",
+            "formdata": [
+              {
+                "key": "email",
+                "value": "example@gmail.com",
+                "type": "text"
+              },
+              {
+                "key": "otp",
+                "value": "123456",
+                "type": "text"
+              }
+            ]
+          },
+          "url": {
+            "raw": "http://localhost:8080/verify-otp",
+            "host": ["http://localhost:8080"],
+            "path": ["verify-otp"]
+          }
+        }
+      },
+      {
+        "name": "Reset Password",
+        "request": {
+          "method": "POST",
+          "header": [],
+          "body": {
+            "mode": "formdata",
+            "formdata": [
+              {
+                "key": "email",
+                "value": "example@gmail.com",
+                "type": "text"
+              },
+              {
+                "key": "new_password",
+                "value": "newpassword123",
+                "type": "text"
+              }
+            ]
+          },
+          "url": {
+            "raw": "http://localhost:8080/reset-password",
+            "host": ["http://localhost:8080"],
+            "path": ["reset-password"]
+          }
+        }
+      },
+      {
+        "name": "Get User Profile by ID",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:8080/user/{id}",
+            "host": ["http://localhost:8080"],
+            "path": ["user", "{id}"],
+            "variable": [
+              {
+                "key": "id",
+                "value": "60f7b54a1234567890abcdef"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "name": "Update User Profile by ID",
+        "request": {
+          "method": "PUT",
+          "header": [],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n    \"name\": \"Updated Name\",\n    \"birthday\": \"1990-01-01\",\n    \"gender\": \"male\",\n    \"location\": \"New Location\",\n    \"bio\": \"Updated bio information\"\n}",
+            "options": {
+              "raw": {
+                "language": "json"
+              }
+            }
+          },
+          "url": {
+            "raw": "http://localhost:8080/user/{id}",
+            "host": ["http://localhost:8080"],
+            "path": ["user", "{id}"],
+            "variable": [
+              {
+                "key": "id",
+                "value": "60f7b54a1234567890abcdef"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  }
+  
